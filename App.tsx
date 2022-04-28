@@ -1,61 +1,33 @@
+import * as React from 'react';
+import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  createNativeStackNavigator,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
-import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-type ParamsList = {
-  App: undefined;
-  App2: undefined;
-  App3: undefined;
-};
-
-const App = ({navigation}: NativeStackScreenProps<ParamsList, 'App'>) => {
+function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text>It works</Text>
-      <Button title="Go to App 2" onPress={() => navigation.navigate('App2')} />
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Home!</Text>
     </View>
   );
-};
+}
 
-const App2 = ({navigation}: NativeStackScreenProps<ParamsList, 'App2'>) => {
+function SettingsScreen() {
   return (
-    <View style={styles.container}>
-      <Text>App2</Text>
-      <Button title="Go to App 3" onPress={() => navigation.navigate('App3')} />
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Settings!</Text>
     </View>
   );
-};
+}
 
-const App3 = () => {
-  return (
-    <View style={styles.container}>
-      <Text>App3</Text>
-    </View>
-  );
-};
+const Tab = createBottomTabNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-const {Navigator, Screen} = createNativeStackNavigator<ParamsList>();
-
-const Root = () => {
+export default function App() {
   return (
     <NavigationContainer>
-      <Navigator>
-        <Screen name="App" component={App} />
-        <Screen name="App2" component={App2} />
-        <Screen name="App3" component={App3} />
-      </Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
-};
-
-export default Root;
+}
