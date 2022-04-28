@@ -1,13 +1,15 @@
 export enum Tab1Screens {
-  Tab1MainScreen = 'Tab1MainScreen',
+  MainScreen = 'Tab1MainScreen',
+  Screen2 = 'Tab1Screen2',
 }
 
 export enum Tab2Screens {
-  Tab2MainScreen = 'Tab2MainScreen',
+  MainScreen = 'Tab2MainScreen',
 }
 
 export enum Tab3Screens {
-  Tab3MainScreen = 'Tab3MainScreen',
+  MainScreen = 'Tab3MainScreen',
+  Screen2 = 'Tab3Screen2',
 }
 
 export enum Navigators {

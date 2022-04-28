@@ -13,23 +13,20 @@ const {Navigator, Screen} = createNativeStackNavigator<Tab2StackParamsList>();
 
 type Props = {
   navigation: CompositeNavigationProp<
-    NativeStackNavigationProp<Tab2StackParamsList, Tab2Screens.Tab2MainScreen>,
+    NativeStackNavigationProp<Tab2StackParamsList, Tab2Screens.MainScreen>,
     BottomTabNavigationProp<BottomTabParamsList>
   >;
-  route: RouteProp<Tab2StackParamsList, Tab2Screens.Tab2MainScreen>;
+  route: RouteProp<Tab2StackParamsList, Tab2Screens.MainScreen>;
 };
 
 export const Tab2StackNavigator = ({}: Props) => {
-  //   navigation.navigate(Navigators.Tab2Stack, {
-  //     screen: Tab2Screens.Tab2MainScreen,
-  //   });
   return (
     <Navigator
       id={Navigators.Tab2Stack}
       screenOptions={{
-        headerShown: false,
+        gestureEnabled: false,
       }}>
-      <Screen name={Tab2Screens.Tab2MainScreen} component={Tab2MainScreen} />
+      <Screen name={Tab2Screens.MainScreen} component={Tab2MainScreen} />
     </Navigator>
   );
 };

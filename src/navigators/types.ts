@@ -7,13 +7,15 @@ import {
 } from '../constants/Navigation';
 
 export type Tab1StackParamsList = {
-  [Tab1Screens.Tab1MainScreen]: undefined;
+  [Tab1Screens.MainScreen]: undefined;
+  [Tab1Screens.Screen2]: undefined;
 };
 export type Tab2StackParamsList = {
-  [Tab2Screens.Tab2MainScreen]: undefined;
+  [Tab2Screens.MainScreen]: undefined;
 };
 export type Tab3StackParamsList = {
-  [Tab3Screens.Tab3MainScreen]: undefined;
+  [Tab3Screens.MainScreen]: undefined;
+  [Tab3Screens.Screen2]: undefined;
 };
 
 export type BottomTabParamsList = {
