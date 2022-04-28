@@ -5,28 +5,31 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import {Navigators, Tab2Screens, Tab3Screens} from '../constants/Navigation';
-import {Tab1MainScreen} from '../screens';
-import {
-  BottomTabParamsList,
-  Tab2StackParamsList,
-  Tab3StackParamsList,
-} from './types';
+import {Navigators, Tab3Screens} from '../constants/Navigation';
+import {Tab3MainScreen} from '../screens';
+import {BottomTabParamsList, Tab3StackParamsList} from './types';
 
 const {Navigator, Screen} = createNativeStackNavigator<Tab3StackParamsList>();
 
 type Props = {
   navigation: CompositeNavigationProp<
-    NativeStackNavigationProp<Tab2StackParamsList, Tab2Screens.Tab2MainScreen>,
+    NativeStackNavigationProp<Tab3StackParamsList, Tab3Screens.Tab3MainScreen>,
     BottomTabNavigationProp<BottomTabParamsList>
   >;
-  route: RouteProp<Tab2StackParamsList, Tab2Screens.Tab2MainScreen>;
+  route: RouteProp<Tab3StackParamsList, Tab3Screens.Tab3MainScreen>;
 };
 
 export const Tab3StackNavigator = ({}: Props) => {
+  //   navigation.navigate(Navigators.Tab3Stack, {
+  //     screen: Tab3Screens.Tab3MainScreen,
+  //   });
   return (
-    <Navigator id={Navigators.Tab3Stack}>
-      <Screen name={Tab3Screens.Tab3MainScreen} component={Tab1MainScreen} />
+    <Navigator
+      id={Navigators.Tab3Stack}
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Screen name={Tab3Screens.Tab3MainScreen} component={Tab3MainScreen} />
     </Navigator>
   );
 };

@@ -10,7 +10,7 @@ const {Navigator, Screen} = createBottomTabNavigator<BottomTabParamsList>();
 
 export const BottomTabNavigator = () => {
   return (
-    <Navigator id={Navigators.BottomTab}>
+    <Navigator id={Navigators.BottomTab} detachInactiveScreens={false}>
       <Screen name={Navigators.Tab1Stack} component={Tab1StackNavigator} />
       <Screen name={Navigators.Tab2Stack} component={Tab2StackNavigator} />
       <Screen name={Navigators.Tab3Stack} component={Tab3StackNavigator} />
