@@ -16,5 +16,6 @@ export enum Navigators {
   Tab1Stack = 'Tab1Stack',
   Tab2Stack = 'Tab2Stack',
   Tab3Stack = 'Tab3Stack',
+  RootStack = 'RootStack',
   BottomTab = 'BottomTab',
 }

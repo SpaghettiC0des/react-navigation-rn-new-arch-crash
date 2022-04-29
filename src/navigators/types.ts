@@ -23,3 +23,9 @@ export type BottomTabParamsList = {
   [Navigators.Tab2Stack]: NavigatorScreenParams<Tab2StackParamsList>;
   [Navigators.Tab3Stack]: NavigatorScreenParams<Tab3StackParamsList>;
 };
+
+export type RootStackParamsList = {
+  [Navigators.Tab1Stack]: NavigatorScreenParams<Tab1StackParamsList>;
+  [Navigators.Tab2Stack]: NavigatorScreenParams<Tab2StackParamsList>;
+  [Navigators.Tab3Stack]: NavigatorScreenParams<Tab3StackParamsList>;
+};

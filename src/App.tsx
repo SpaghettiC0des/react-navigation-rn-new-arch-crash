@@ -1,13 +1,23 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {BottomTabNavigator} from './navigators';
+import {RootStackNavigator} from './navigators';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {StyleSheet} from 'react-native';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
+    <GestureHandlerRootView style={styles.container}>
+      <NavigationContainer>
+        <RootStackNavigator />
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
